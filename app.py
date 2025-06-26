@@ -76,6 +76,7 @@ def main():
     try:
         logo = Image.open("company_logo.jpg")  # Or .jpg/.svg
         st.image(logo, width=200)  # Adjust width as needed
+        st.sidebar.image()
     except FileNotFoundError:
         st.warning("Company logo not found")
     except Exception as e:
