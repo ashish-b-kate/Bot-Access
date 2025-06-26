@@ -74,7 +74,7 @@ def main():
 
     # Load and display logo (update path to your image file)
     try:
-        logo = Image.open("company_logo.png")  # Or .jpg/.svg
+        logo = Image.open("company_logo.jpg")  # Or .jpg/.svg
         st.image(logo, width=200)  # Adjust width as needed
     except FileNotFoundError:
         st.warning("Company logo not found")
