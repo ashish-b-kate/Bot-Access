@@ -1,4 +1,5 @@
 import streamlit as st
+from PIL import Image  # For handling image files
 import pandas as pd
 import requests
 import hashlib
@@ -71,6 +72,14 @@ def authenticate_user(email, password, users_df):
 def main():
     st.title("🔒 Employee Bot Access Portal")
 
+    # Load and display logo (update path to your image file)
+    try:
+        logo = Image.open("company_logo.png")  # Or .jpg/.svg
+        st.image(logo, width=200)  # Adjust width as needed
+    except FileNotFoundError:
+        st.warning("Company logo not found")
+    except Exception as e:
+        st.error(f"Error loading logo: {e}")
     # Load data
     users_df = load_sheet("Users")
     bots_df = load_sheet("Bots")
