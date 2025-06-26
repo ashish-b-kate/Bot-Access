@@ -70,9 +70,9 @@ def authenticate_user(email, password, users_df):
 
 # Main App
 def main():
-    st.sidebar.image()
+    
     st.title("🔒 Employee Bot Access Portal")
-
+    st.sidebar.image()
     # Load and display logo (update path to your image file)
     try:
         logo = Image.open("company_logo.jpg")  # Or .jpg/.svg
