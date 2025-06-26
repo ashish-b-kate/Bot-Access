@@ -107,7 +107,7 @@ def main():
         ]
     
         available_bots = bots_df[bots_df["BotID"].isin(allowed_bots)]
-        st.write("Filtered Bots:", available_bots)  # Debug
+        # st.write("Filtered Bots:", available_bots)  # Debug
     
         selected_bot = st.selectbox("Choose a bot:", available_bots["BotName"])
         if st.button("Access Bot"):
