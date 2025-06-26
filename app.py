@@ -94,9 +94,21 @@ def main():
 
     else:
         st.success(f"Welcome, {st.session_state.user['Email'].values[0]}!")
-        allowed_bots = st.session_state.user["AllowedBots"].values[0].split(",")
+    
+        # Debug output (temporary)
+        st.write("User's AllowedBots:", st.session_state.user["AllowedBots"].values[0])
+        st.write("All Bots:", bots_df["BotID"].tolist())
+    
+        # Fixed splitting logic
+        allowed_bots = [
+            bot.strip() 
+            for bot in st.session_state.user["AllowedBots"].values[0].split(",") 
+            if bot.strip()
+        ]
+    
         available_bots = bots_df[bots_df["BotID"].isin(allowed_bots)]
-
+        st.write("Filtered Bots:", available_bots)  # Debug
+    
         selected_bot = st.selectbox("Choose a bot:", available_bots["BotName"])
         if st.button("Access Bot"):
             bot_url = available_bots[available_bots["BotName"] == selected_bot]["BotURL"].values[0]
