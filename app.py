@@ -75,7 +75,7 @@ def main():
     col1, col2 = st.columns([1, 4])
     with col1:
         try:
-            logo = Image.open("srv_media_logo.jpg")  # Your logo file
+            logo = Image.open("company_logo.jpg")  # Your logo file
             st.image(logo, width=100)  # Adjust width as needed
         except:
             # Fallback text logo if image fails
