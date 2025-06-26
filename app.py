@@ -96,8 +96,8 @@ def main():
         st.success(f"Welcome, {st.session_state.user['Email'].values[0]}!")
     
         # Debug output (temporary)
-        st.write("User's AllowedBots:", st.session_state.user["AllowedBots"].values[0])
-        st.write("All Bots:", bots_df["BotID"].tolist())
+        # st.write("User's AllowedBots:", st.session_state.user["AllowedBots"].values[0])
+        # st.write("All Bots:", bots_df["BotID"].tolist())
     
         # Fixed splitting logic
         allowed_bots = [
