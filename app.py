@@ -71,31 +71,7 @@ def authenticate_user(email, password, users_df):
 # Main App
 def main():
     
-   # Logo section - Add this at the VERY START of main()
-    col1, col2 = st.columns([1, 4])
-    with col1:
-        try:
-            logo = Image.open("company_logo.jpg")  # Your logo file
-            st.image(logo, width=100)  # Adjust width as needed
-        except:
-            # Fallback text logo if image fails
-            st.markdown("""
-            <div style="text-align: center;">
-                <h3>SRV</h3>
-                <h3>MEDIA</h3>
-            </div>
-            """, unsafe_allow_html=True)
-    
-    with col2:
-        st.title("Employee Bot Access Portal")  # Your existing title
-    try:
-        logo = Image.open("company_logo.jpg")  # Or .jpg/.svg
-        st.image(logo, width=200)  # Adjust width as needed
-        
-    except FileNotFoundError:
-        st.warning("Company logo not found")
-    except Exception as e:
-        st.error(f"Error loading logo: {e}")
+    st.title("🔒 Employee Bot Access Portal")
     # Load data
     users_df = load_sheet("Users")
     bots_df = load_sheet("Bots")
